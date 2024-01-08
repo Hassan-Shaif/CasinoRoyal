@@ -7,7 +7,7 @@ import csv
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # Counter for the number of rounds played
-trying = 0
+trying = 1
 
 # List to store the amount gained or lost in each round
 amount_of_loss_gain = []
@@ -81,7 +81,7 @@ def check_number():
         amount_of_loss_gain.append(money)
         print(f"Wrong guess! The amount you lost in coins is {money}.")
         print(f"You have {capital}.")
-        print(f"{correct_number}")
+        print(f"the correct number was {correct_number}")
         new_round()  # function so start new round
 
 
