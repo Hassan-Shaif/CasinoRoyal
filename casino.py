@@ -2,6 +2,7 @@
 import random  # to choose a number randomly from the list
 import sys  # we need it to exit the program when it should be exited
 import csv
+import game2
 
 # List of possible numbers to guess
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -13,15 +14,32 @@ trying = 1
 amount_of_loss_gain = []
 
 
+def chosegame():
+    global game
+    print("We have two guessing number games for you")
+    game = int(input("choose 1 for game1 or 2 for game2  ..."))
+    if game == 2:
+        game2.instructions()
+    elif game == 1:
+        instructions()
+    else:
+        print("choose 1 or 2")
+
+
 # Function to display instructions and set the initial capital
 def instructions():
     global capital
-    print("You can continue playing until you have 0 coin, and you can stop after any round you want.")
-    print("If you guess correctly, the amount of coins will double 10 times.")
-    print("If you guess incorrectly, you will only lose the amount of money you play with.")
-    print("Fair enough, isn't it? Let's start.")
+    print("""Thank you for choosing this game.
+            -In this game you have to guess a number between 1 and 9.
+            - Every round you can chose the money you want to play with.
+            -Pay attention, In this game the correct number that you have to guess, change every round.
+            -You can try 20 times or until you have 0 coin , and you can stop after any round you want.
+            -If you guess correctly, the amount of coins you play with will be doubled 10 times.
+            -If you guess incorrectly, you will only lose the amount of money you play with.
+            -Fair enough, isn't it? Let's start.""")
     capital = int(input("Enter the amount of money you want to play with in the game: "))
-    print(f"Welcome to your game, you now have {capital}.")
+    print(f"Welcome again, your capital is {capital}.")
+    start_game()
 
 
 # Function to start a new game round
@@ -151,5 +169,4 @@ def uitlezencsv():
     print(row_values)
 
 
-instructions()
-start_game()
+chosegame()
